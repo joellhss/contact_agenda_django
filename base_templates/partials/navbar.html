@@ -7,10 +7,10 @@
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <div class="collapse navbar-collapse d-flex justify-content-between" id="navbarSupportedContent">
 
       <!-- Menu central -->
-      <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+      <ul class="navbar-nav mb-2 mb-lg-0">
 
         <li class="nav-item">
           <a class="nav-link {% if request.resolver_match.url_name == 'home' %}active{% endif %}"
@@ -30,9 +30,20 @@
       </ul>
 
       <!-- Busca -->
-      <form class="d-flex form-search" role="search">
-        <input class="form-control rounded-start-pill" type="search" placeholder="Buscar contato">
-        <button class="btn btn-light text-success rounded-end-pill btn-person" type="submit">Buscar</button>
+      <form class="d-flex form-search" role="search" action="{% url "contact:search" %}" method="get">
+        <input 
+          class="form-control rounded-start-pill focus-ring focus-ring-success" 
+          type="search" placeholder="Buscar contato" 
+          name="q" 
+          id="search" 
+          type="search"
+          value="{{ search_value }}"
+        >
+        <button class="btn btn-light text-success rounded-end-pill btn-person" type="submit">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+          </svg>
+        </button>
       </form>
 
     </div>

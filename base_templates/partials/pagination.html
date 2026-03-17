@@ -1,0 +1,46 @@
+{% if page_obj %}
+<nav aria-label="Paginação">
+    <ul class="pagination justify-content-center mt-4 shadow-sm ">
+
+        <!-- Botão First -->
+        <li class="page-item {% if not page_obj.has_previous %}disabled{% endif %}">
+            <a class="page-link link-success border-0 border-end border-light focus-ring focus-ring-success"
+               href="?page=1{% if search_value %}&q={{ search_value }}{% endif %}">
+                &laquo;
+            </a>
+        </li>
+
+        <!-- Botão Previous -->
+        <li class="page-item {% if not page_obj.has_previous %}disabled{% endif %}">
+            <a class="page-link link-success border-0 border-start border-end border-light focus-ring focus-ring-success"
+               href="{% if page_obj.has_previous %}?page={{ page_obj.previous_page_number }}{% if search_value %}&q={{ search_value }}{% endif %}{% else %}#{% endif %}">
+                Anterior
+            </a>
+        </li>
+
+        <!-- Página atual -->
+        <li class="page-item active">
+            <span class="page-link link-light bg-success border-0">
+                {{ page_obj.number }} de {{ page_obj.paginator.num_pages }}
+            </span>
+        </li>
+
+        <!-- Botão Next -->
+        <li class="page-item {% if not page_obj.has_next %}disabled{% endif %}">
+            <a class="page-link link-success border-0 border-end border-light focus-ring focus-ring-success"
+               href="{% if page_obj.has_next %}?page={{ page_obj.next_page_number }}{% if search_value %}&q={{ search_value }}{% endif %}{% else %}#{% endif %}">
+                Próximo
+            </a>
+        </li>
+
+        <!-- Botão Last -->
+        <li class="page-item {% if not page_obj.has_next %}disabled{% endif %}">
+            <a class="page-link link-success border-0 border-start border-light focus-ring focus-ring-success"
+               href="?page={{ page_obj.paginator.num_pages }}{% if search_value %}&q={{ search_value }}{% endif %}">
+                &raquo;
+            </a>
+        </li>
+
+    </ul>
+</nav>
+{% endif %}

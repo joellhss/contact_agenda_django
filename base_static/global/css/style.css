@@ -1,5 +1,6 @@
 body {
     background-color: #f8f9fa;
+    min-height: 100vh;
 }
 
 .form-search .form-control {
@@ -13,8 +14,11 @@ body {
 
 .form-search .btn-person {
     border: none;
-    background-color: #B0FFDA;
 }
 
-.content {
+.footer-person {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

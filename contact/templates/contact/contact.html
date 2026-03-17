@@ -1,0 +1,87 @@
+{% extends "global/index.html" %}
+{% load static %}
+{% block css_local %}<link rel="stylesheet" type="text/css" href="{% static 'contact/css/style.css' %}">{% endblock css_local %}
+
+{% block content %}
+
+<div class="card shadow-sm my-4 pt-4 border-0 rounded-4 card-single-contact">
+
+    <div class="row g-0">
+
+        <!-- Imagem -->
+        <div class="col-md-4 text-center p-3">
+            <img 
+                src="{{ contact.picture.url }}" 
+                alt="Foto de {{ contact.first_name }}"
+                class="img-fluid rounded"
+            >
+        </div>
+
+        <!-- Informações -->
+        <div class="col-md-8">
+            <div class="card-body">
+
+                <h2 class="text-success fw-bold">
+                    {{ contact.first_name }} {{ contact.last_name }}
+                </h2>
+
+                <hr>
+                <p><strong>ID:</strong> {{ contact.id }}</p>
+                <p><strong>Telefone:</strong> {{ contact.phone }}</p>
+                <p><strong>Email:</strong> {{ contact.email }}</p>
+
+                <p class="d-flex align-items-center">
+                    <strong>Categoria:</strong>
+                    {% if contact.category %}
+                        <span class="badge bg-success mx-1">
+                            {{ contact.category }}
+                        </span>
+                    {% else %}
+                        <span class="text-muted">Não definida</span>
+                    {% endif %}
+                </p>
+
+                <p>
+                    <strong>Criado em:</strong>
+                    {{ contact.created_date|date:"d/m/Y H:i" }}
+                </p>
+
+                <p>
+                    <strong>Responsável:</strong>
+                    {% if contact.owner %}
+                        {{ contact.owner }}
+                    {% else %}
+                        <span class="text-muted">Não informado</span>
+                    {% endif %}
+                </p>
+
+                {% if contact.description %}
+                    <hr>
+                    <p><strong>Descrição:</strong></p>
+                    <p class="text-muted">
+                        {{ contact.description }}
+                    </p>
+                {% endif %}
+
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Rodapé -->
+    <div class="card-footer-person p-3 d-flex justify-content-between border-0 shadow-0">
+
+        <a href="{% url 'contact:home' %}" class="btn btn-outline-secondary rounded-pill px-5">
+            Voltar
+        </a>
+
+        {% comment %} <div>
+            <a href="#" class="btn btn-warning">Editar</a>
+            <a href="#" class="btn btn-danger">Excluir</a>
+        </div> {% endcomment %}
+
+    </div>
+
+</div>
+
+{% endblock content %}
