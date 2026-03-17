@@ -1,1 +1,56 @@
 {% extends "global/index.html" %}
+
+{% block content %}
+
+<div class="container py-4">
+
+    <div class="row g-4">
+
+        {% for contact in contacts %}
+        
+        <div class="col-12 col-sm-6 col-lg-4">
+            
+            <div class="card shadow-sm h-100">
+
+                <div class="card-body">
+
+                    <h5 class="card-title text-success fw-bold">
+                        {{ contact.first_name }} {{ contact.last_name }}
+                    </h5>
+
+                    <p class="card-text mb-1">
+                        <strong>Telefone:</strong> {{ contact.phone }}
+                    </p>
+
+                    <p class="card-text mb-1">
+                        <strong>Email:</strong> {{ contact.email }}
+                    </p>
+
+                    <p class="card-text">
+                        <strong>Categoria:</strong> {{ contact.category }}
+                    </p>
+
+                </div>
+
+                <div class="card-footer bg-transparent border-0">
+
+                    <a 
+                        href="#" 
+                        class="btn btn-success w-100"
+                    >
+                        Ver detalhes
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+</div>
+
+{% endblock content %}

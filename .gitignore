@@ -1,7 +1,12 @@
+# Configurações locais
+project/local_settings.py
+
 # Bytecode Python
 project/__pycache__/
 *.py[cod]
 *$py.class
+static
+media
 
 # Ambiente virtual
 venv/

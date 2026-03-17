@@ -1,6 +1,7 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,12 +12,32 @@
     <link rel="stylesheet" href="{% static 'global/css/bootstrap-utilities.min.css' %}">
     <link rel="stylesheet" href="{% static 'global/css/style.css' %}">
 </head>
-<body>
-    
 
-    
-<script src="{%static 'global/js/bootstrap.min.js'%}"></script>
-<script src="{%static 'global/js/bootstrap.esm.min.js'%}"></script>
-<script src="{%static 'global/js/bootstrap.bundle.min.js'%}"></script>
+<body>
+    <header class="border-bottom mb-4">
+
+        <section class="text-center py-4 container">
+            <h1 class="text-success fw-bold">
+                Agenda by Django
+            </h1>
+            <p class="text-muted mb-0">
+                Gerencie seus contatos de forma simples
+            </p>
+        </section>
+
+        {% include "partials/navbar.html" %}
+
+    </header>
+
+    <div class="container">
+        <main class="content">
+            {% block content %}{% endblock content %}
+        </main>
+    </div>
+
+    <script src="{%static 'global/js/bootstrap.min.js'%}"></script>
+    <script src="{%static 'global/js/bootstrap.esm.min.js'%}"></script>
+    <script src="{%static 'global/js/bootstrap.bundle.min.js'%}"></script>
 </body>
+
 </html>
