@@ -9,50 +9,53 @@
 <div class="py-4">
     <div class="card shadow-sm px-5 py-5 border-0 rounded-4">
         <h1 class="mb-4">Novo contato</h1>
-        <form action="" method="POST" enctype="multipart/form-data" class="row g-4 ">
-            <div class="col-12 col-sm-6 col-lg-6">
-                <label for="form_first_name" class="form-label">Nome</label>
-                <input type="text" class="form-control focus-ring focus-ring-success border-secondary-subtle"
-                    id="form_first_name" placeholder="Digite o nome">
-            </div>
-            <div class="col-12 col-sm-6 col-lg-6">
-                <label for="form_last_name" class="form-label">Sobrenome</label>
-                <input type="text" class="form-control focus-ring focus-ring-success border-secondary-subtle"
-                    id="form_last_name" placeholder="Digite o sobrenome">
-            </div>
-            <div class="col-12 col-sm-6 col-lg-6">
-                <label for="form_phone" class="form-label">Telefone</label>
-                <input type="tel" class="form-control focus-ring focus-ring-success border-secondary-subtle"
-                    id="form_phone" placeholder="Digite o número de telefone">
-            </div>
-            <div class="col-12 col-sm-6 col-lg-6">
-                <label for="form_email" class="form-label">E-mail</label>
-                <input type="email" class="form-control focus-ring focus-ring-success border-secondary-subtle"
-                    id="form_email" placeholder="Digite o endereço de e-mail">
-            </div>
-            <div class="col-12 col-sm-12 col-lg-12">
-                <label for="form_description" class="form-label">Descrição</label>
-                <input type="text" class="form-control focus-ring focus-ring-success border-secondary-subtle"
-                    id="form_description" placeholder="Digite o que desejar sobre este contato">
-            </div>
-            <div class="col-12 col-sm-6 col-lg-6">
-                <label for="form_picture" class="form-label">Imagem de perfil</label>
-                <div class="input-group">
-                    <span class="input-group-text" id="basic-addon3">Procurar</span>
-                    <input class="form-control focus-ring focus-ring-success border-secondary-subtle" type="image" id="form_picture">
-                </div>
-            </div>
-            <div class="col-12 col-sm-6 col-lg-6">
-                <label for="form_categoria" class="form-label">Categoria</label>
-                <select class="form-select focus-ring focus-ring-success border-secondary-subtle" aria-label="Disabled select example" id="form_categoria">
-                    <option selected>Open this select menu</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
-                </select>
-            </div>
 
-            <div class="col-12 col-sm-12 col-lg-12 text-end">
+
+        <form 
+            action="{{form_action}}"
+            method="POST"
+            enctype="multipart/form-data"
+            class="row g-4 needs-validation"
+            novalidate
+        >
+            {% csrf_token %}
+            
+            {% for field in form %}
+                <div class="
+                    {% if field.name == 'description' %}
+                        col-12
+                    {% else %}
+                        col-12 col-sm-6 col-lg-6
+                    {% endif %}
+                ">
+                    
+                    <label for="{{field.id_for_label}}" class="form-label">
+                        {{field.label}}
+                        {% if field.field.required %}
+                            <span class="text-danger"> *</span>
+                        {% endif %}
+                    </label>
+                    {{field}}
+
+                    {% if field.errors %}
+                        <div class="invalid-feedback d-block">
+                            {{ field.errors|striptags }}
+                        </div>
+                    {% endif %}
+
+                    {% if form.is_bound and not field.errors and field.value and field.name != 'picture' %}
+                        <div class="valid-feedback d-block">
+                            Dados preenchidos corretamente.
+                        </div>
+                    {% endif %}
+
+                </div>
+
+
+            {% endfor %}
+
+            <div class="col-12 col-sm-12 col-lg-12 d-flex justify-content-between align-items-end mt-5">
+                <p class="text-danger fw-light" >(*) Campos com preenchimento obrigatório</p>
                 <button type="submit" class="btn btn-success px-5 py-2 rounded-pill">Cadastrar</button>
             </div>
 

@@ -13,7 +13,7 @@
             <img 
                 src="{{ contact.picture.url }}" 
                 alt="Foto de {{ contact.first_name }}"
-                class="img-fluid rounded"
+                class="img-fluid rounded-4"
             >
         </div>
 
@@ -75,10 +75,34 @@
             Voltar
         </a>
 
-        {% comment %} <div>
-            <a href="#" class="btn btn-warning">Editar</a>
-            <a href="#" class="btn btn-danger">Excluir</a>
-        </div> {% endcomment %}
+        {% if confirmation_del %}
+            <div class="d-flex align-items-center gap-3">
+                <p class="m-0">Tem certeza que deseja apagar este contato?</p>
+
+                <form method="POST" action="{% url 'contact:delete' contact.pk %}">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-danger rounded-pill px-4">
+                        Sim
+                    </button>
+                </form>
+
+                <a href="{% url 'contact:detail' contact.pk %}" class="btn btn-secondary rounded-pill px-4">
+                    Não
+                </a>
+            </div>
+        {% else %}
+            <div>
+                <a href="{% url 'contact:update' contact.pk %}" class="btn btn-warning rounded-pill px-4 mx-3">
+                    Editar
+                </a>
+                <a href="?confirm=1" class="btn btn-danger rounded-pill px-4">
+                    Excluir
+                </a>
+            </div>
+        {% endif %}
+        
+
+
 
     </div>
 

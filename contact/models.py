@@ -21,8 +21,8 @@ class Contact(models.Model):
     created_date = models.DateTimeField(default=timezone.now)
     description = models.TextField(blank=True)
     show = models.BooleanField(default=True)
-    picture = models.ImageField(default='pictures/default/default.jpg',upload_to='pictures/%Y/%m/')
-    category = models.ForeignKey(Category, on_delete=models.SET_NULL, blank=True, null=True)
+    picture = models.ImageField(default='pictures/default/default.jpg',upload_to='pictures/%Y/%m/', blank=True)
+    category = models.ForeignKey(Category, on_delete=models.SET_NULL, blank=False, null=True)
     owner = models.ForeignKey(User, on_delete=models.SET_NULL, blank=True, null=True)
 
     class Meta:

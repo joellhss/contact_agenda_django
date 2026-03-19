@@ -23,10 +23,12 @@ def index(request):
 def contact(request, contact_id):
     # contact_for_id = Contact.objects.get(pk=contact_id)
     contact_for_id = get_object_or_404(Contact, pk=contact_id, show=True)
+    confirmation = request.GET.get('confirm') == '1'
 
     context = {
         'site_title': f'{contact_for_id.first_name} {contact_for_id.last_name}',
-        'contact': contact_for_id
+        'contact': contact_for_id,
+        'confirmation_del': confirmation
     }
     return render(request, 'contact/contact.html', context)
 

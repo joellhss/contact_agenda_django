@@ -9,8 +9,8 @@ urlpatterns = [
     path('search/', views.search, name='search'),
 
     # Contact CRUD
-    path('contact/<int:contact_id>/detail/', views.contact, name='contact_detail'),
-    path('contact/create/', views.create, name='contact_create'),
-    path('contact/<int:contact_id>/update/', views.contact, name='contact_update'),
-    path('contact/<int:contact_id>/delete/', views.contact, name='contact_delete'),
+    path('contact/<int:contact_id>/detail/', views.contact, name='detail'),
+    path('contact/create/', views.create, name='create'),
+    path('contact/<int:contact_id>/update/', views.update, name='update'),
+    path('contact/<int:contact_id>/delete/', views.delete, name='delete'),
 ]
