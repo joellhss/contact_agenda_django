@@ -131,4 +131,7 @@ try:
     from project.local_settings import *
 except ImportError:
     ...
-    
+
+LOGIN_URL = 'contact:login'
+LOGIN_REDIRECT_URL = 'contact:home'
+LOGOUT_REDIRECT_URL = 'contact:login'

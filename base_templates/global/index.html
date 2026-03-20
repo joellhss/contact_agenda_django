@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agenda - {{ site_title }}</title>
+    <title>Agenda - {{ tab_title }}</title>
     <link rel="stylesheet" href="{% static 'global/css/bootstrap-reboot.min.css' %}">
     <link rel="stylesheet" href="{% static 'global/css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'global/css/bootstrap-grid.min.css' %}">
@@ -26,6 +26,9 @@
         </section>
 
         {% include "partials/navbar.html" %}
+        <div class="container mt-4">
+            {% include "partials/message.html" %}
+        </div>  
 
     </header>
 

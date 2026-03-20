@@ -1,4 +1,4 @@
-from .models import Contact
+from contact.models import Contact
 from django import forms
 import re
 
@@ -21,8 +21,6 @@ class ContactForm(forms.ModelForm):
                     field.widget.attrs['class'] = base_class
             else:
                 field.widget.attrs['class'] = base_class
-
-
 
     def clean_first_name(self):
         value = self.cleaned_data.get('first_name')

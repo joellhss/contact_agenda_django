@@ -1,0 +1,61 @@
+{% extends "global/index.html" %}
+{% load static %}
+
+{% block css_local %}
+<link rel="stylesheet" type="text/css" href="{% static 'contact/css/style.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'contact/css/forms.css' %}">
+{% endblock css_local %}
+{% block content %}
+<div class="py-4">
+    <div class="card shadow-sm px-5 py-5 border-0 rounded-4 d-flex justify-content-center align-items-center">
+        <div class="w-50">
+            <h1 class="mb-4">{{ page_title }}</h1>
+
+            <form 
+                action="{{form_action}}"
+                method="POST"
+                class="row g-4 needs-validation"
+                novalidate
+            >
+                {% csrf_token %}
+                
+                {% for field in form %}
+                    <div class="col-12">
+                        
+                        <label for="{{field.id_for_label}}" class="form-label">
+                            {{field.label}}
+                        </label>
+                        
+                        {{field}}
+
+                        {% if field.errors %}
+                            <div class="invalid-feedback d-block">
+                                {{ field.errors|striptags }}
+                            </div>
+                        {% endif %}
+
+                        {% if form.is_bound and not field.errors and field.value and field.name != 'picture' %}
+                            <div class="valid-feedback d-block">
+                                Dados preenchidos corretamente.
+                            </div>
+                        {% endif %}
+
+                        {% if field.help_text and field.name == 'password1' %}
+                            <div class="form-text">
+                                {{ field.help_text }}
+                            </div>
+                        {% endif %}
+
+                    </div>
+
+
+                {% endfor %}
+
+                <div class="col-12 col-sm-12 col-lg-12 d-flex justify-content-between align-items-end mt-5">
+                    <button type="submit" class="btn btn-success w-100 py-2 rounded-pill">{{ btn_submit }}</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock content %}
