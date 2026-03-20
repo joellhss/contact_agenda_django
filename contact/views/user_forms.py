@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from contact.forms import RegisterForm, LoginForm, UpdateUserForm
 from django.contrib import messages, auth
 from django.urls import reverse
+from django.contrib.auth.decorators import login_required
 
 def register(request):
     form_action = reverse('contact:register')
@@ -33,6 +34,7 @@ def register(request):
     }
     return render(request, 'contact/register.html', context)
 
+@login_required
 def update_user(request):
     form_action = reverse('contact:update_user')
     if request.method == 'POST':

@@ -27,6 +27,7 @@ def create(request):
             messages.success(request, 'Contato salvo com sucesso!')
             return redirect('contact:detail', contact_id=contact.pk)
 
+        messages.error(request, 'Erro ao salvar contato!')
         return render(request, 'contact/create.html', context)
 
     context = {
@@ -40,7 +41,7 @@ def create(request):
 
 @login_required
 def update(request, contact_id):
-    contact = get_object_or_404(Contact, pk=contact_id, show=True)
+    contact = get_object_or_404(Contact, pk=contact_id, show=True, owner=request.user)
     form_action = reverse('contact:update', args=(contact_id,))
     
     if request.method == 'POST':
@@ -65,6 +66,7 @@ def update(request, contact_id):
             messages.success(request, 'Contato atualizado com sucesso!')
             return redirect('contact:detail', contact_id=contact.pk)
 
+        messages.error(request, 'Erro ao atualizar contato!')
         return render(request, 'contact/create.html', context)
 
     context = {
@@ -78,13 +80,14 @@ def update(request, contact_id):
 
 @login_required
 def delete(request, contact_id):
-    contact = get_object_or_404(Contact, pk=contact_id, show=True)
-    print('entrei')
+    contact = get_object_or_404(Contact, pk=contact_id, show=True, owner=request.user)
 
     if request.method == 'POST':
         # contact.delete()
         contact.show = False
         contact.save()
+        messages.success(request, 'Contato excluído com sucesso!')
         return redirect('contact:home')
 
+    messages.error(request, 'Erro ao excluir contato!')
     return redirect('contact:detail', contact_id=contact_id)
