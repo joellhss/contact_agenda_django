@@ -1,0 +1,643 @@
+[2026-03-20 17:14:27 +0000] [6788] [DEBUG] Current configuration:
+  config: ./gunicorn.conf.py
+  wsgi_app: None
+  bind: ['unix:/run/agenda.socket']
+  backlog: 2048
+  workers: 6
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/joelmafra/agendaapp
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 33
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1', '::1']
+  accesslog: -
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: /home/joelmafra/agendaapp/gunicorn-error-log
+  loglevel: debug
+  capture_output: True
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  logconfig_json: None
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: True
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  enable_backlog_metric: False
+  proc_name: None
+  default_proc_name: project.wsgi:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x719fc6ce31a0>
+  on_reload: <function OnReload.on_reload at 0x719fc6ce32e0>
+  when_ready: <function WhenReady.when_ready at 0x719fc6ce3420>
+  pre_fork: <function Prefork.pre_fork at 0x719fc6ce3600>
+  post_fork: <function Postfork.post_fork at 0x719fc6ce3740>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x719fc6ce3880>
+  worker_int: <function WorkerInt.worker_int at 0x719fc6ce39c0>
+  worker_abort: <function WorkerAbort.worker_abort at 0x719fc6ce3b00>
+  pre_exec: <function PreExec.pre_exec at 0x719fc6ce3c40>
+  pre_request: <function PreRequest.pre_request at 0x719fc6ce3d80>
+  post_request: <function PostRequest.post_request at 0x719fc6ce3e20>
+  child_exit: <function ChildExit.child_exit at 0x719fc6ce3f60>
+  worker_exit: <function WorkerExit.worker_exit at 0x719fc6cfc0e0>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x719fc6cfc220>
+  on_exit: <function OnExit.on_exit at 0x719fc6cfc360>
+  ssl_context: <function NewSSLContext.ssl_context at 0x719fc6cfc540>
+  proxy_protocol: off
+  proxy_allow_ips: ['127.0.0.1', '::1']
+  protocol: http
+  uwsgi_allow_ips: ['127.0.0.1', '::1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  http_protocols: ['h1']
+  http2_max_concurrent_streams: 100
+  http2_initial_window_size: 65535
+  http2_max_frame_size: 16384
+  http2_max_header_list_size: 65536
+  raw_paste_global_conf: []
+  permit_obsolete_folding: False
+  strip_header_spaces: False
+  permit_unconventional_http_method: False
+  permit_unconventional_http_version: False
+  casefold_http_method: False
+  forwarder_headers: ['SCRIPT_NAME', 'PATH_INFO']
+  header_map: drop
+  asgi_loop: auto
+  asgi_lifespan: auto
+  asgi_disconnect_grace_period: 3
+  root_path: 
+  dirty_apps: []
+  dirty_workers: 0
+  dirty_timeout: 300
+  dirty_threads: 1
+  dirty_graceful_timeout: 30
+  on_dirty_starting: <function OnDirtyStarting.on_dirty_starting at 0x719fc6cfc9a0>
+  dirty_post_fork: <function DirtyPostFork.dirty_post_fork at 0x719fc6cfcae0>
+  dirty_worker_init: <function DirtyWorkerInit.dirty_worker_init at 0x719fc6cfcc20>
+  dirty_worker_exit: <function DirtyWorkerExit.dirty_worker_exit at 0x719fc6cfcd60>
+  control_socket: gunicorn.ctl
+  control_socket_mode: 384
+  control_socket_disable: False
+[2026-03-20 17:14:27 +0000] [6788] [INFO] Starting gunicorn 25.1.0
+[2026-03-20 17:14:27 +0000] [6788] [DEBUG] Arbiter booted
+[2026-03-20 17:14:27 +0000] [6788] [INFO] Listening at: unix:/run/agenda.socket (6788)
+[2026-03-20 17:14:27 +0000] [6788] [INFO] Using worker: sync
+[2026-03-20 17:14:27 +0000] [6788] [INFO] Control socket listening at /home/joelmafra/agendaapp/gunicorn.ctl
+[2026-03-20 17:14:27 +0000] [6791] [INFO] Booting worker with pid: 6791
+[2026-03-20 17:14:27 +0000] [6792] [INFO] Booting worker with pid: 6792
+[2026-03-20 17:14:27 +0000] [6793] [INFO] Booting worker with pid: 6793
+[2026-03-20 17:14:27 +0000] [6796] [INFO] Booting worker with pid: 6796
+[2026-03-20 17:14:27 +0000] [6797] [INFO] Booting worker with pid: 6797
+[2026-03-20 17:14:28 +0000] [6798] [INFO] Booting worker with pid: 6798
+[2026-03-20 17:14:28 +0000] [6788] [DEBUG] 6 workers
+[2026-03-20 14:14:55 -0300] [6798] [DEBUG] GET /
+ - - [20/Mar/2026:14:14:55 -0300] "GET / HTTP/1.1" 400 143 "-" "curl/8.5.0"
+[2026-03-20 14:28:34 -0300] [6793] [DEBUG] GET /
+ - - [20/Mar/2026:14:28:34 -0300] "GET / HTTP/1.1" 400 143 "-" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:148.0) Gecko/20100101 Firefox/148.0"
+[2026-03-20 14:32:10 -0300] [6793] [INFO] Worker exiting (pid: 6793)
+[2026-03-20 14:32:10 -0300] [6792] [INFO] Worker exiting (pid: 6792)
+[2026-03-20 14:32:10 -0300] [6798] [INFO] Worker exiting (pid: 6798)
+[2026-03-20 17:32:10 +0000] [6788] [INFO] Handling signal: term
+[2026-03-20 14:32:10 -0300] [6797] [INFO] Worker exiting (pid: 6797)
+[2026-03-20 14:32:10 -0300] [6796] [INFO] Worker exiting (pid: 6796)
+[2026-03-20 14:32:10 -0300] [6791] [INFO] Worker exiting (pid: 6791)
+[2026-03-20 17:32:10 +0000] [6788] [INFO] Worker (pid:6793) was sent SIGTERM!
+[2026-03-20 17:32:10 +0000] [6788] [INFO] Shutting down: Master
+[2026-03-20 17:32:10 +0000] [6951] [DEBUG] Current configuration:
+  config: ./gunicorn.conf.py
+  wsgi_app: None
+  bind: ['unix:/run/agenda.socket']
+  backlog: 2048
+  workers: 6
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/joelmafra/agendaapp
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 33
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1', '::1']
+  accesslog: -
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: /home/joelmafra/agendaapp/gunicorn-error-log
+  loglevel: debug
+  capture_output: True
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  logconfig_json: None
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: True
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  enable_backlog_metric: False
+  proc_name: None
+  default_proc_name: project.wsgi:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7567d7edf1a0>
+  on_reload: <function OnReload.on_reload at 0x7567d7edf2e0>
+  when_ready: <function WhenReady.when_ready at 0x7567d7edf420>
+  pre_fork: <function Prefork.pre_fork at 0x7567d7edf600>
+  post_fork: <function Postfork.post_fork at 0x7567d7edf740>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7567d7edf880>
+  worker_int: <function WorkerInt.worker_int at 0x7567d7edf9c0>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7567d7edfb00>
+  pre_exec: <function PreExec.pre_exec at 0x7567d7edfc40>
+  pre_request: <function PreRequest.pre_request at 0x7567d7edfd80>
+  post_request: <function PostRequest.post_request at 0x7567d7edfe20>
+  child_exit: <function ChildExit.child_exit at 0x7567d7edff60>
+  worker_exit: <function WorkerExit.worker_exit at 0x7567d7efc0e0>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7567d7efc220>
+  on_exit: <function OnExit.on_exit at 0x7567d7efc360>
+  ssl_context: <function NewSSLContext.ssl_context at 0x7567d7efc540>
+  proxy_protocol: off
+  proxy_allow_ips: ['127.0.0.1', '::1']
+  protocol: http
+  uwsgi_allow_ips: ['127.0.0.1', '::1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  http_protocols: ['h1']
+  http2_max_concurrent_streams: 100
+  http2_initial_window_size: 65535
+  http2_max_frame_size: 16384
+  http2_max_header_list_size: 65536
+  raw_paste_global_conf: []
+  permit_obsolete_folding: False
+  strip_header_spaces: False
+  permit_unconventional_http_method: False
+  permit_unconventional_http_version: False
+  casefold_http_method: False
+  forwarder_headers: ['SCRIPT_NAME', 'PATH_INFO']
+  header_map: drop
+  asgi_loop: auto
+  asgi_lifespan: auto
+  asgi_disconnect_grace_period: 3
+  root_path: 
+  dirty_apps: []
+  dirty_workers: 0
+  dirty_timeout: 300
+  dirty_threads: 1
+  dirty_graceful_timeout: 30
+  on_dirty_starting: <function OnDirtyStarting.on_dirty_starting at 0x7567d7efc9a0>
+  dirty_post_fork: <function DirtyPostFork.dirty_post_fork at 0x7567d7efcae0>
+  dirty_worker_init: <function DirtyWorkerInit.dirty_worker_init at 0x7567d7efcc20>
+  dirty_worker_exit: <function DirtyWorkerExit.dirty_worker_exit at 0x7567d7efcd60>
+  control_socket: gunicorn.ctl
+  control_socket_mode: 384
+  control_socket_disable: False
+[2026-03-20 17:32:10 +0000] [6951] [INFO] Starting gunicorn 25.1.0
+[2026-03-20 17:32:10 +0000] [6951] [DEBUG] Arbiter booted
+[2026-03-20 17:32:10 +0000] [6951] [INFO] Listening at: unix:/run/agenda.socket (6951)
+[2026-03-20 17:32:10 +0000] [6951] [INFO] Using worker: sync
+[2026-03-20 17:32:11 +0000] [6951] [INFO] Control socket listening at /home/joelmafra/agendaapp/gunicorn.ctl
+[2026-03-20 17:32:11 +0000] [6954] [INFO] Booting worker with pid: 6954
+[2026-03-20 17:32:11 +0000] [6955] [INFO] Booting worker with pid: 6955
+[2026-03-20 17:32:11 +0000] [6956] [INFO] Booting worker with pid: 6956
+[2026-03-20 17:32:11 +0000] [6957] [INFO] Booting worker with pid: 6957
+[2026-03-20 17:32:11 +0000] [6962] [INFO] Booting worker with pid: 6962
+[2026-03-20 17:32:11 +0000] [6963] [INFO] Booting worker with pid: 6963
+[2026-03-20 17:32:11 +0000] [6951] [DEBUG] 6 workers
+[2026-03-20 14:32:32 -0300] [6957] [DEBUG] GET /
+ - - [20/Mar/2026:14:32:32 -0300] "GET / HTTP/1.1" 400 143 "-" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:148.0) Gecko/20100101 Firefox/148.0"
+[2026-03-20 14:32:33 -0300] [6954] [DEBUG] GET /
+ - - [20/Mar/2026:14:32:33 -0300] "GET / HTTP/1.1" 400 143 "-" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:148.0) Gecko/20100101 Firefox/148.0"
+[2026-03-20 14:32:35 -0300] [6954] [DEBUG] GET /
+ - - [20/Mar/2026:14:32:35 -0300] "GET / HTTP/1.1" 400 143 "-" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:148.0) Gecko/20100101 Firefox/148.0"
+[2026-03-20 17:33:02 +0000] [6951] [INFO] Handling signal: term
+[2026-03-20 14:33:02 -0300] [6955] [INFO] Worker exiting (pid: 6955)
+[2026-03-20 14:33:02 -0300] [6954] [INFO] Worker exiting (pid: 6954)
+[2026-03-20 14:33:02 -0300] [6956] [INFO] Worker exiting (pid: 6956)
+[2026-03-20 14:33:02 -0300] [6957] [INFO] Worker exiting (pid: 6957)
+[2026-03-20 14:33:02 -0300] [6962] [INFO] Worker exiting (pid: 6962)
+[2026-03-20 14:33:02 -0300] [6963] [INFO] Worker exiting (pid: 6963)
+[2026-03-20 17:33:02 +0000] [6951] [INFO] Worker (pid:6954) was sent SIGTERM!
+[2026-03-20 17:33:02 +0000] [6951] [INFO] Worker (pid:6955) was sent SIGTERM!
+[2026-03-20 17:33:02 +0000] [6951] [INFO] Worker (pid:6956) was sent SIGTERM!
+[2026-03-20 17:33:02 +0000] [6951] [INFO] Worker (pid:6957) was sent SIGTERM!
+[2026-03-20 17:33:02 +0000] [6951] [INFO] Worker (pid:6962) was sent SIGTERM!
+[2026-03-20 17:33:02 +0000] [6951] [INFO] Worker (pid:6963) was sent SIGTERM!
+[2026-03-20 17:33:02 +0000] [6951] [INFO] Shutting down: Master
+[2026-03-20 17:33:02 +0000] [6980] [DEBUG] Current configuration:
+  config: ./gunicorn.conf.py
+  wsgi_app: None
+  bind: ['unix:/run/agenda.socket']
+  backlog: 2048
+  workers: 6
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/joelmafra/agendaapp
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 33
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1', '::1']
+  accesslog: -
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: /home/joelmafra/agendaapp/gunicorn-error-log
+  loglevel: debug
+  capture_output: True
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  logconfig_json: None
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: True
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  enable_backlog_metric: False
+  proc_name: None
+  default_proc_name: project.wsgi:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x724a13d971a0>
+  on_reload: <function OnReload.on_reload at 0x724a13d972e0>
+  when_ready: <function WhenReady.when_ready at 0x724a13d97420>
+  pre_fork: <function Prefork.pre_fork at 0x724a13d97600>
+  post_fork: <function Postfork.post_fork at 0x724a13d97740>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x724a13d97880>
+  worker_int: <function WorkerInt.worker_int at 0x724a13d979c0>
+  worker_abort: <function WorkerAbort.worker_abort at 0x724a13d97b00>
+  pre_exec: <function PreExec.pre_exec at 0x724a13d97c40>
+  pre_request: <function PreRequest.pre_request at 0x724a13d97d80>
+  post_request: <function PostRequest.post_request at 0x724a13d97e20>
+  child_exit: <function ChildExit.child_exit at 0x724a13d97f60>
+  worker_exit: <function WorkerExit.worker_exit at 0x724a135080e0>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x724a13508220>
+  on_exit: <function OnExit.on_exit at 0x724a13508360>
+  ssl_context: <function NewSSLContext.ssl_context at 0x724a13508540>
+  proxy_protocol: off
+  proxy_allow_ips: ['127.0.0.1', '::1']
+  protocol: http
+  uwsgi_allow_ips: ['127.0.0.1', '::1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  http_protocols: ['h1']
+  http2_max_concurrent_streams: 100
+  http2_initial_window_size: 65535
+  http2_max_frame_size: 16384
+  http2_max_header_list_size: 65536
+  raw_paste_global_conf: []
+  permit_obsolete_folding: False
+  strip_header_spaces: False
+  permit_unconventional_http_method: False
+  permit_unconventional_http_version: False
+  casefold_http_method: False
+  forwarder_headers: ['SCRIPT_NAME', 'PATH_INFO']
+  header_map: drop
+  asgi_loop: auto
+  asgi_lifespan: auto
+  asgi_disconnect_grace_period: 3
+  root_path: 
+  dirty_apps: []
+  dirty_workers: 0
+  dirty_timeout: 300
+  dirty_threads: 1
+  dirty_graceful_timeout: 30
+  on_dirty_starting: <function OnDirtyStarting.on_dirty_starting at 0x724a135089a0>
+  dirty_post_fork: <function DirtyPostFork.dirty_post_fork at 0x724a13508ae0>
+  dirty_worker_init: <function DirtyWorkerInit.dirty_worker_init at 0x724a13508c20>
+  dirty_worker_exit: <function DirtyWorkerExit.dirty_worker_exit at 0x724a13508d60>
+  control_socket: gunicorn.ctl
+  control_socket_mode: 384
+  control_socket_disable: False
+[2026-03-20 17:33:02 +0000] [6980] [INFO] Starting gunicorn 25.1.0
+[2026-03-20 17:33:02 +0000] [6980] [DEBUG] Arbiter booted
+[2026-03-20 17:33:02 +0000] [6980] [INFO] Listening at: unix:/run/agenda.socket (6980)
+[2026-03-20 17:33:02 +0000] [6980] [INFO] Using worker: sync
+[2026-03-20 17:33:02 +0000] [6983] [INFO] Booting worker with pid: 6983
+[2026-03-20 17:33:02 +0000] [6980] [INFO] Control socket listening at /home/joelmafra/agendaapp/gunicorn.ctl
+[2026-03-20 17:33:02 +0000] [6984] [INFO] Booting worker with pid: 6984
+[2026-03-20 17:33:02 +0000] [6985] [INFO] Booting worker with pid: 6985
+[2026-03-20 17:33:02 +0000] [6986] [INFO] Booting worker with pid: 6986
+[2026-03-20 17:33:03 +0000] [6991] [INFO] Booting worker with pid: 6991
+[2026-03-20 17:33:03 +0000] [6992] [INFO] Booting worker with pid: 6992
+[2026-03-20 17:33:03 +0000] [6980] [DEBUG] 6 workers
+[2026-03-20 14:33:04 -0300] [6984] [DEBUG] GET /
+ - - [20/Mar/2026:14:33:04 -0300] "GET / HTTP/1.1" 400 143 "-" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:148.0) Gecko/20100101 Firefox/148.0"
+[2026-03-20 14:33:05 -0300] [6984] [DEBUG] GET /
+ - - [20/Mar/2026:14:33:05 -0300] "GET / HTTP/1.1" 400 143 "-" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:148.0) Gecko/20100101 Firefox/148.0"
+[2026-03-20 14:33:06 -0300] [6984] [DEBUG] GET /
+ - - [20/Mar/2026:14:33:06 -0300] "GET / HTTP/1.1" 400 143 "-" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:148.0) Gecko/20100101 Firefox/148.0"
+[2026-03-20 14:33:07 -0300] [6984] [DEBUG] GET /
+ - - [20/Mar/2026:14:33:07 -0300] "GET / HTTP/1.1" 400 143 "-" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:148.0) Gecko/20100101 Firefox/148.0"
+[2026-03-20 14:33:07 -0300] [6984] [DEBUG] GET /
+ - - [20/Mar/2026:14:33:07 -0300] "GET / HTTP/1.1" 400 143 "-" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:148.0) Gecko/20100101 Firefox/148.0"
+[2026-03-20 14:33:08 -0300] [6983] [DEBUG] GET /
+ - - [20/Mar/2026:14:33:08 -0300] "GET / HTTP/1.1" 400 143 "-" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:148.0) Gecko/20100101 Firefox/148.0"
+[2026-03-20 14:33:08 -0300] [6983] [DEBUG] GET /
+ - - [20/Mar/2026:14:33:08 -0300] "GET / HTTP/1.1" 400 143 "-" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:148.0) Gecko/20100101 Firefox/148.0"
+[2026-03-20 14:33:08 -0300] [6983] [DEBUG] GET /
+ - - [20/Mar/2026:14:33:08 -0300] "GET / HTTP/1.1" 400 143 "-" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:148.0) Gecko/20100101 Firefox/148.0"
+[2026-03-20 14:33:08 -0300] [6983] [DEBUG] GET /
+ - - [20/Mar/2026:14:33:08 -0300] "GET / HTTP/1.1" 400 143 "-" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:148.0) Gecko/20100101 Firefox/148.0"
+[2026-03-20 14:33:08 -0300] [6983] [DEBUG] GET /
+ - - [20/Mar/2026:14:33:08 -0300] "GET / HTTP/1.1" 400 143 "-" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:148.0) Gecko/20100101 Firefox/148.0"
+[2026-03-20 14:33:09 -0300] [6992] [DEBUG] GET /
+ - - [20/Mar/2026:14:33:09 -0300] "GET / HTTP/1.1" 400 143 "-" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:148.0) Gecko/20100101 Firefox/148.0"
+[2026-03-20 14:33:09 -0300] [6992] [DEBUG] GET /
+ - - [20/Mar/2026:14:33:09 -0300] "GET / HTTP/1.1" 400 143 "-" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:148.0) Gecko/20100101 Firefox/148.0"
+[2026-03-20 14:33:09 -0300] [6992] [DEBUG] GET /
+ - - [20/Mar/2026:14:33:09 -0300] "GET / HTTP/1.1" 400 143 "-" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:148.0) Gecko/20100101 Firefox/148.0"
+[2026-03-20 14:33:10 -0300] [6992] [DEBUG] GET /
+ - - [20/Mar/2026:14:33:10 -0300] "GET / HTTP/1.1" 400 143 "-" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:148.0) Gecko/20100101 Firefox/148.0"
+[2026-03-20 14:33:10 -0300] [6992] [DEBUG] GET /
+ - - [20/Mar/2026:14:33:10 -0300] "GET / HTTP/1.1" 400 143 "-" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:148.0) Gecko/20100101 Firefox/148.0"
+[2026-03-20 14:33:10 -0300] [6992] [DEBUG] GET /
+ - - [20/Mar/2026:14:33:10 -0300] "GET / HTTP/1.1" 400 143 "-" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:148.0) Gecko/20100101 Firefox/148.0"
+[2026-03-20 14:33:10 -0300] [6992] [DEBUG] GET /
+ - - [20/Mar/2026:14:33:10 -0300] "GET / HTTP/1.1" 400 143 "-" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:148.0) Gecko/20100101 Firefox/148.0"
+[2026-03-20 14:33:10 -0300] [6992] [DEBUG] GET /
+ - - [20/Mar/2026:14:33:10 -0300] "GET / HTTP/1.1" 400 143 "-" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:148.0) Gecko/20100101 Firefox/148.0"
+[2026-03-20 14:33:11 -0300] [6985] [DEBUG] GET /
+ - - [20/Mar/2026:14:33:11 -0300] "GET / HTTP/1.1" 400 143 "-" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:148.0) Gecko/20100101 Firefox/148.0"
+[2026-03-20 14:33:11 -0300] [6985] [DEBUG] GET /
+ - - [20/Mar/2026:14:33:11 -0300] "GET / HTTP/1.1" 400 143 "-" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:148.0) Gecko/20100101 Firefox/148.0"
+[2026-03-20 14:33:11 -0300] [6986] [DEBUG] GET /
+ - - [20/Mar/2026:14:33:11 -0300] "GET / HTTP/1.1" 400 143 "-" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:148.0) Gecko/20100101 Firefox/148.0"
+[2026-03-20 14:33:11 -0300] [6986] [DEBUG] GET /
+ - - [20/Mar/2026:14:33:11 -0300] "GET / HTTP/1.1" 400 143 "-" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:148.0) Gecko/20100101 Firefox/148.0"
+[2026-03-20 14:33:11 -0300] [6991] [DEBUG] GET /
+ - - [20/Mar/2026:14:33:11 -0300] "GET / HTTP/1.1" 400 143 "-" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:148.0) Gecko/20100101 Firefox/148.0"
+[2026-03-20 14:33:11 -0300] [6991] [DEBUG] GET /
+ - - [20/Mar/2026:14:33:11 -0300] "GET / HTTP/1.1" 400 143 "-" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:148.0) Gecko/20100101 Firefox/148.0"
+[2026-03-20 14:33:12 -0300] [6991] [DEBUG] GET /
+ - - [20/Mar/2026:14:33:12 -0300] "GET / HTTP/1.1" 400 143 "-" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:148.0) Gecko/20100101 Firefox/148.0"
+[2026-03-20 14:33:12 -0300] [6991] [DEBUG] GET /
+ - - [20/Mar/2026:14:33:12 -0300] "GET / HTTP/1.1" 400 143 "-" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:148.0) Gecko/20100101 Firefox/148.0"
+[2026-03-20 14:33:12 -0300] [6985] [DEBUG] GET /
+ - - [20/Mar/2026:14:33:12 -0300] "GET / HTTP/1.1" 400 143 "-" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:148.0) Gecko/20100101 Firefox/148.0"
+[2026-03-20 14:33:13 -0300] [6985] [DEBUG] GET /
+ - - [20/Mar/2026:14:33:13 -0300] "GET / HTTP/1.1" 400 143 "-" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:148.0) Gecko/20100101 Firefox/148.0"
+[2026-03-20 14:33:13 -0300] [6985] [DEBUG] GET /
+ - - [20/Mar/2026:14:33:13 -0300] "GET / HTTP/1.1" 400 143 "-" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:148.0) Gecko/20100101 Firefox/148.0"
+[2026-03-20 14:33:13 -0300] [6983] [DEBUG] GET /
+ - - [20/Mar/2026:14:33:13 -0300] "GET / HTTP/1.1" 400 143 "-" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:148.0) Gecko/20100101 Firefox/148.0"
+[2026-03-20 14:33:13 -0300] [6983] [DEBUG] GET /
+ - - [20/Mar/2026:14:33:13 -0300] "GET / HTTP/1.1" 400 143 "-" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:148.0) Gecko/20100101 Firefox/148.0"
+[2026-03-20 14:33:26 -0300] [6992] [DEBUG] GET /
+ - - [20/Mar/2026:14:33:26 -0300] "GET / HTTP/1.1" 400 143 "-" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:148.0) Gecko/20100101 Firefox/148.0"
+[2026-03-20 14:33:26 -0300] [6992] [DEBUG] GET /
+ - - [20/Mar/2026:14:33:26 -0300] "GET / HTTP/1.1" 400 143 "-" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:148.0) Gecko/20100101 Firefox/148.0"
+[2026-03-20 14:33:27 -0300] [6992] [DEBUG] GET /
+ - - [20/Mar/2026:14:33:27 -0300] "GET / HTTP/1.1" 400 143 "-" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:148.0) Gecko/20100101 Firefox/148.0"
+[2026-03-20 14:33:28 -0300] [6992] [DEBUG] GET /
+ - - [20/Mar/2026:14:33:28 -0300] "GET / HTTP/1.1" 400 143 "-" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:148.0) Gecko/20100101 Firefox/148.0"
+[2026-03-20 17:34:59 +0000] [6980] [INFO] Handling signal: term
+[2026-03-20 14:34:59 -0300] [6983] [INFO] Worker exiting (pid: 6983)
+[2026-03-20 14:34:59 -0300] [6984] [INFO] Worker exiting (pid: 6984)
+[2026-03-20 14:34:59 -0300] [6992] [INFO] Worker exiting (pid: 6992)
+[2026-03-20 14:34:59 -0300] [6985] [INFO] Worker exiting (pid: 6985)
+[2026-03-20 14:34:59 -0300] [6986] [INFO] Worker exiting (pid: 6986)
+[2026-03-20 14:34:59 -0300] [6991] [INFO] Worker exiting (pid: 6991)
+[2026-03-20 17:34:59 +0000] [6980] [INFO] Worker (pid:6983) was sent SIGTERM!
+[2026-03-20 17:34:59 +0000] [6980] [INFO] Worker (pid:6984) was sent SIGTERM!
+[2026-03-20 17:34:59 +0000] [6980] [INFO] Worker (pid:6985) was sent SIGTERM!
+[2026-03-20 17:34:59 +0000] [6980] [INFO] Worker (pid:6992) was sent SIGTERM!
+[2026-03-20 17:34:59 +0000] [6980] [INFO] Shutting down: Master
+[2026-03-20 17:34:59 +0000] [7014] [DEBUG] Current configuration:
+  config: ./gunicorn.conf.py
+  wsgi_app: None
+  bind: ['unix:/run/agenda.socket']
+  backlog: 2048
+  workers: 6
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/joelmafra/agendaapp
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 33
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1', '::1']
+  accesslog: -
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: /home/joelmafra/agendaapp/gunicorn-error-log
+  loglevel: debug
+  capture_output: True
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  logconfig_json: None
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: True
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  enable_backlog_metric: False
+  proc_name: None
+  default_proc_name: project.wsgi:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x76ab5d1b31a0>
+  on_reload: <function OnReload.on_reload at 0x76ab5d1b32e0>
+  when_ready: <function WhenReady.when_ready at 0x76ab5d1b3420>
+  pre_fork: <function Prefork.pre_fork at 0x76ab5d1b3600>
+  post_fork: <function Postfork.post_fork at 0x76ab5d1b3740>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x76ab5d1b3880>
+  worker_int: <function WorkerInt.worker_int at 0x76ab5d1b39c0>
+  worker_abort: <function WorkerAbort.worker_abort at 0x76ab5d1b3b00>
+  pre_exec: <function PreExec.pre_exec at 0x76ab5d1b3c40>
+  pre_request: <function PreRequest.pre_request at 0x76ab5d1b3d80>
+  post_request: <function PostRequest.post_request at 0x76ab5d1b3e20>
+  child_exit: <function ChildExit.child_exit at 0x76ab5d1b3f60>
+  worker_exit: <function WorkerExit.worker_exit at 0x76ab5c9040e0>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x76ab5c904220>
+  on_exit: <function OnExit.on_exit at 0x76ab5c904360>
+  ssl_context: <function NewSSLContext.ssl_context at 0x76ab5c904540>
+  proxy_protocol: off
+  proxy_allow_ips: ['127.0.0.1', '::1']
+  protocol: http
+  uwsgi_allow_ips: ['127.0.0.1', '::1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  http_protocols: ['h1']
+  http2_max_concurrent_streams: 100
+  http2_initial_window_size: 65535
+  http2_max_frame_size: 16384
+  http2_max_header_list_size: 65536
+  raw_paste_global_conf: []
+  permit_obsolete_folding: False
+  strip_header_spaces: False
+  permit_unconventional_http_method: False
+  permit_unconventional_http_version: False
+  casefold_http_method: False
+  forwarder_headers: ['SCRIPT_NAME', 'PATH_INFO']
+  header_map: drop
+  asgi_loop: auto
+  asgi_lifespan: auto
+  asgi_disconnect_grace_period: 3
+  root_path: 
+  dirty_apps: []
+  dirty_workers: 0
+  dirty_timeout: 300
+  dirty_threads: 1
+  dirty_graceful_timeout: 30
+  on_dirty_starting: <function OnDirtyStarting.on_dirty_starting at 0x76ab5c9049a0>
+  dirty_post_fork: <function DirtyPostFork.dirty_post_fork at 0x76ab5c904ae0>
+  dirty_worker_init: <function DirtyWorkerInit.dirty_worker_init at 0x76ab5c904c20>
+  dirty_worker_exit: <function DirtyWorkerExit.dirty_worker_exit at 0x76ab5c904d60>
+  control_socket: gunicorn.ctl
+  control_socket_mode: 384
+  control_socket_disable: False
+[2026-03-20 17:34:59 +0000] [7014] [INFO] Starting gunicorn 25.1.0
+[2026-03-20 17:34:59 +0000] [7014] [DEBUG] Arbiter booted
+[2026-03-20 17:34:59 +0000] [7014] [INFO] Listening at: unix:/run/agenda.socket (7014)
+[2026-03-20 17:34:59 +0000] [7014] [INFO] Using worker: sync
+[2026-03-20 17:34:59 +0000] [7019] [INFO] Booting worker with pid: 7019
+[2026-03-20 17:34:59 +0000] [7014] [INFO] Control socket listening at /home/joelmafra/agendaapp/gunicorn.ctl
+[2026-03-20 17:34:59 +0000] [7020] [INFO] Booting worker with pid: 7020
+[2026-03-20 17:35:00 +0000] [7023] [INFO] Booting worker with pid: 7023
+[2026-03-20 17:35:00 +0000] [7024] [INFO] Booting worker with pid: 7024
+[2026-03-20 17:35:00 +0000] [7027] [INFO] Booting worker with pid: 7027
+[2026-03-20 17:35:00 +0000] [7030] [INFO] Booting worker with pid: 7030
+[2026-03-20 17:35:00 +0000] [7014] [DEBUG] 6 workers
+[2026-03-20 14:35:01 -0300] [7027] [DEBUG] GET /
+ - - [20/Mar/2026:14:35:01 -0300] "GET / HTTP/1.1" 302 0 "-" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:148.0) Gecko/20100101 Firefox/148.0"
+[2026-03-20 14:35:01 -0300] [7027] [DEBUG] GET /user/login/
+ - - [20/Mar/2026:14:35:01 -0300] "GET /user/login/?next=/ HTTP/1.1" 200 4563 "-" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:148.0) Gecko/20100101 Firefox/148.0"
+[2026-03-20 14:35:06 -0300] [7027] [DEBUG] GET /user/login/
+ - - [20/Mar/2026:14:35:06 -0300] "GET /user/login/?next=/ HTTP/1.1" 200 4563 "-" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:148.0) Gecko/20100101 Firefox/148.0"
+[2026-03-20 14:35:06 -0300] [7020] [DEBUG] GET /favicon.ico
+ - - [20/Mar/2026:14:35:06 -0300] "GET /favicon.ico HTTP/1.1" 404 179 "http://192.168.122.99/user/login/?next=/" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:148.0) Gecko/20100101 Firefox/148.0"
