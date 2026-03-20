@@ -5,8 +5,8 @@ project/local_settings.py
 project/__pycache__/
 *.py[cod]
 *$py.class
-static
-media
+/static
+/media
 
 # Ambiente virtual
 venv/

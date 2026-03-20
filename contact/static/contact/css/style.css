@@ -1,0 +1,41 @@
+.card-person {
+    border: none;
+}
+
+.card-info {
+    background-color: #91a89d18;
+}
+
+.empty-box {
+    width: 700px;
+    color: #444f4a73
+}
+
+.card-single-contact {
+    overflow: hidden;
+}
+
+.card-footer-person {
+    background-color: #f8f8f8;
+}
+
+.image-profile-contact {
+    width: 340px;
+    height: 340px;
+    object-fit: cover;
+    object-position: top;
+}
+
+.image-profile-edit {
+    width: 40px;
+    height: 40px;
+    object-fit: cover
+}
+
+.title-image-edit {
+    font-size: 0.8rem;
+}
+
+.name-image-edit {
+    font-size: 0.9rem;
+}
